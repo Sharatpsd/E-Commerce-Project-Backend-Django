@@ -1,83 +1,129 @@
-E-Commerce Project
+# E-Commerce Web Application
 
-Description:
-This is a full-featured E-Commerce web application developed using Django and Django REST Framework (DRF). It allows users to browse products, add them to cart, place orders, and manage their accounts. Admins can manage products, categories, and users through the Django admin panel.
+## Overview
+This is a full-featured **E-Commerce web application** developed using **Django, Django REST Framework (DRF), and PostgreSQL**. It allows users to browse products, manage shopping carts, place orders, and handle payments. The project is designed for scalability, real-world usability, and smooth frontend-backend integration.
 
-Features:
+---
 
-User authentication and authorization (JWT based).
+## Features
 
-Product listing, filtering, and searching.
+### User Features
+- User registration and login with **JWT Authentication**
+- Profile management (update personal info)
+- Browse and search products by category
+- Add products to **shopping cart**
+- Place orders and view order history
+- Secure checkout with payment simulation
 
-Shopping cart and order placement system.
+### Admin Features
+- Admin panel to manage products, categories, and orders
+- Manage users and roles (admin, customer)
+- Full control over product inventory and pricing
 
-Admin dashboard to manage users, products, and categories.
+### Technical Features
+- Backend built with **Django & Django REST Framework**
+- RESTful APIs for frontend consumption
+- Database: **PostgreSQL**
+- JWT authentication for secure API access
+- Deployed locally (can be deployed on cloud platforms like Heroku or AWS)
+- Responsive and modern admin interface
 
-RESTful APIs for all major functionalities.
+---
 
-Technologies Used:
+## Tech Stack
+- **Backend:** Python, Django, Django REST Framework
+- **Database:** PostgreSQL
+- **Authentication:** JWT (JSON Web Tokens)
+- **Frontend (Admin Panel):** Django Admin
+- **Deployment (Optional):** Heroku / AWS / Localhost
 
-Backend: Django, Django REST Framework
+---
 
-Database: PostgreSQL
+## Installation
 
-Authentication: JWT (Simple JWT)
-
-Frontend: Django Templates (for admin and basic UI)
-
-Deployment: Localhost / can be deployed on any cloud platform
-
-Installation / Setup:
-
-Clone the repository:
-
+1. **Clone the repository**
+```bash
 git clone https://github.com/Sharatpsd/E-Commerce-Project-Backend-Django.git
+cd E-Commerce-Project
+Create and activate virtual environment
 
-
-Create and activate virtual environment:
-
+bash
+Copy code
 python -m venv venv
-venv\Scripts\activate   # For Windows
+# Windows
+venv\Scripts\activate
+# Linux/Mac
+source venv/bin/activate
+Install dependencies
 
-
-Install dependencies:
-
+bash
+Copy code
 pip install -r requirements.txt
+Set up environment variables
+Create a .env file in the root directory and add:
 
+ini
+Copy code
+SECRET_KEY=<your-secret-key>
+DEBUG=True
+DB_NAME=<your-db-name>
+DB_USER=<your-db-user>
+DB_PASSWORD=<your-db-password>
+DB_HOST=127.0.0.1
+DB_PORT=5432
+Apply migrations
 
-Setup .env file with database credentials.
-
-Run migrations:
-
+bash
+Copy code
 python manage.py makemigrations
 python manage.py migrate
+Create superuser
 
-
-Create superuser for admin panel:
-
+bash
+Copy code
 python manage.py createsuperuser
+Run the server
 
-
-Run the server:
-
+bash
+Copy code
 python manage.py runserver
+Visit http://127.0.0.1:8000/admin/ for admin panel.
 
+API Endpoints
+/api/products/ - List all products
 
-Access the admin panel: http://127.0.0.1:8000/admin/
+/api/products/<id>/ - Product details
 
-Usage:
+/api/cart/ - User's cart management
 
-Users can register, login, browse products, add to cart, and place orders.
+/api/orders/ - Place and view orders
 
-Admin can manage products, categories, and users from the admin panel.
+/api/auth/ - Registration & login endpoints
 
-APIs are available for frontend integration or mobile apps.
+For full API documentation, see /docs/ or Postman collection (if included).
 
-Deployment:
+Deployment
+This project can be deployed on Heroku, AWS, or any cloud server.
 
-Project can be deployed on Heroku, AWS, or any VPS.
+Use PostgreSQL in production.
 
-Configured to use PostgreSQL as production database.
+Set environment variables securely and enable DEBUG=False in production.
 
-Author:
+Contributing
+Fork the repository
+
+Create your branch (git checkout -b feature/your-feature)
+
+Commit your changes (git commit -m 'Add feature')
+
+Push to branch (git push origin feature/your-feature)
+
+Open a Pull Request
+
+License
+This project is open-source and available under the MIT License.
+
+Author
 Sharat Acharja Mugdho
+BSc in Computer Science & Engineering, Green University of Bangladesh
+Email: <your-email>
